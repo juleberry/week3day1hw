@@ -1,6 +1,6 @@
 class Hamster {
-  constructor(owner, name, price) {
-  this.owner = '';
+  constructor(owner = '', name, price) {
+  this.owner = owner;
   this.name = name;
   this.price = 15;
   }
@@ -18,14 +18,14 @@ class Hamster {
 }
 
 class Person {
-  constructor(name, age, height, weight, mood, hamsters, bankAccount) {
+  constructor(name, age = 0, height = 0, weight = 0, mood = 0, hamsters = [], bankAccount = 0) {
     this.name = name;
-    this.age = 0;
-    this.height = 0;
-    this.weight = 0;
-    this.mood = 0;
-    this.hamsters = [];
-    this.bankAccount = 0;
+    this.age = age;
+    this.height = height;
+    this.weight = weight;
+    this.mood = mood;
+    this.hamsters = hamsters;
+    this.bankAccount = bankAccount;
   }
   getName() {
     return this.name;
@@ -61,8 +61,47 @@ class Person {
   }
 
   buyHamster(hamster) {
-    this.hamsters.push([]);
-    this.mood += 10;
-    this.bankAccount - Hamster.getPrice(hamster);
+    this.hamsters.push(hamster);
+    this.mood + 10;
+    this.bankAccount - hamster.getPrice(hamster);
   }
 }
+
+const timmy = new Person('Timmy');
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+console.log(timmy);
+timmy.eat();
+timmy.eat();
+timmy.eat();
+timmy.eat();
+timmy.eat();
+console.log(timmy);
+timmy.exercise();
+timmy.exercise();
+timmy.exercise();
+timmy.exercise();
+timmy.exercise();
+console.log(timmy);
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+console.log(timmy);
+const gus = new Hamster('Timmy', 'Gus');
+console.log(gus);
+timmy.buyHamster(gus);
+console.log(timmy);
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+timmy.ageUp();
+console.log(timmy);
+timmy.eat();
+timmy.eat();
+console.log(timmy);

@@ -105,3 +105,48 @@ console.log(timmy);
 timmy.eat();
 timmy.eat();
 console.log(timmy);
+
+// -------------------
+// Chef Make Dinners
+// -------------------
+// Chef should be a factory of Dinner
+// Add a constructor to dinner that sets the string properties, appetizer, entree and dessert.
+// Add a method on chef that takes three arguments and returns a new Dinner based on those arguments.
+// Have the Chef create 3 dinners, log the dinners
+
+class Dinner {
+  constructor (type, appetizer, entree, dessert)  {
+    this.type = type;
+    this.appetizer = appetizer;
+    this.entree = entree;
+    this.dessert = dessert;
+ }
+}
+
+class ChefFactory {
+  constructor (mealType) {
+    this.mealType = mealType;
+    this.listOfMeals = [];
+  }
+  makeNewMeal (appetizer, entree, dessert) {
+    const newDinner = new Dinner(this.mealType, appetizer, entree, dessert);
+    this.listOfMeals.push(newDinner);
+  }
+  printNewMeal () {
+  for (let choice of this.listOfMeals) {
+    console.log(choice);
+  }
+ }
+}
+
+let italianDinner = new ChefFactory('Italian');
+let texMexDinner = new ChefFactory('Tex-Mex');
+let seafoodDinner = new ChefFactory('Seafood');
+
+italianDinner.makeNewMeal('bruchetta', 'chicken parmesan', 'cherry cheesecake');
+texMexDinner.makeNewMeal('chips and queso', 'steak fajitas', 'sopapillas');
+seafoodDinner.makeNewMeal('oyster shooters', "lobster po' boys", 'lemon meringue pie');
+
+italianDinner.printNewMeal();
+texMexDinner.printNewMeal();
+seafoodDinner.printNewMeal();

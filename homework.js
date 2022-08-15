@@ -123,7 +123,7 @@ class Dinner {
  }
 }
 
-class ChefFactory {
+class Chef {
   constructor (mealType) {
     this.mealType = mealType;
     this.listOfMeals = [];
@@ -139,9 +139,9 @@ class ChefFactory {
  }
 }
 
-let italianDinner = new ChefFactory('Italian');
-let texMexDinner = new ChefFactory('Tex-Mex');
-let seafoodDinner = new ChefFactory('Seafood');
+let italianDinner = new Chef('Italian');
+let texMexDinner = new Chef('Tex-Mex');
+let seafoodDinner = new Chef('Seafood');
 
 italianDinner.makeNewMeal('bruchetta', 'chicken parmesan', 'cherry cheesecake');
 texMexDinner.makeNewMeal('chips and queso', 'steak fajitas', 'sopapillas');
